@@ -1,11 +1,11 @@
 # DataGenerator
 This project is aiming to generate some virtual data file to ease some test.
 Almost divide the project into five parts.
-the first part:Random
-the second part:Distribution
-the third part:Field
-the fourth part:Generator
-the fifth part:Writer
+the first part:Random;
+the second part:Distribution;
+the third part:Field;
+the fourth part:Generator;
+the fifth part:Writer;
 
 Random:
 this part is aiming to generate different kinds of random numbers.
