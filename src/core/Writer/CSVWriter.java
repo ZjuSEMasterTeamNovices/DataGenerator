@@ -14,10 +14,6 @@ public class CSVWriter implements BasicWriter {
 	private BufferedWriter writer = null;
 	private String encoding = "utf-8";
 
-	public static final String WINDOWSTAIL = "\n\r";
-	public static final String LINUXTAIL = "\n";
-	public static final String MACOSTAIL = "\r";
-
 	public CSVWriter(String filePath){
 		this.setOutputPath(filePath);
 	}
