@@ -8,6 +8,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CSVWriter implements BasicWriter {
 	private String outputPath = null;
@@ -30,7 +32,7 @@ public class CSVWriter implements BasicWriter {
 	public void initWriter() {
 		try {
 			writer = new BufferedWriter(
-					new OutputStreamWriter(new FileOutputStream(new File(outputPath)), encoding));
+					new OutputStreamWriter(new FileOutputStream(new File(outputPath+".csv")), encoding));
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
