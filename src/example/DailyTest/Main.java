@@ -24,10 +24,10 @@ public class Main {
 		List<BasicField> arr = new ArrayList<BasicField>();
 		arr.add(int1);
 		arr.add(int2);
-		CSVGenerator generator = new CSVGenerator();
 		BasicWriter writer = new CSVWriter(filePath);
-		generator.Generate(writer, arr, 100);
-		
+		writer.initWriter();
+		CSVGenerator generator = new CSVGenerator(writer, arr, 100);
+		generator.Generate();
 		
 	}
 

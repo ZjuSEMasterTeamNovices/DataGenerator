@@ -2,11 +2,11 @@ package core.Field;
 
 import java.util.Random;
 
-public class IntegerField implements BasicCSVField {
+public class IntegerField extends BasicCSVField implements BasicField{
+
 	private int min = 1;
 	private int max = -1;
 	private Random device;
-	private String head = null;
 
 	public IntegerField(Random device)
 	{
@@ -24,11 +24,6 @@ public class IntegerField implements BasicCSVField {
 	}
 
 	@Override
-	public void setHead(String head) {
-		this.head = head;
-	}
-
-	@Override
 	public String getData() {
 		if(min > max)
 		{
@@ -38,10 +33,16 @@ public class IntegerField implements BasicCSVField {
 
 		return Integer.toString(device.nextInt(boundLength) + min);
 	}
-
-	@Override
-	public String getHead() {
-		return this.head;
+	//return the left border
+	public int min() {
+		return min;
 	}
-
+	//return the right border
+	public int max() {
+		return max;
+	}
+	//return the Random instance
+	public Random getDevice() {
+		return device;
+	}
 }

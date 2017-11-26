@@ -1,7 +1,14 @@
 package core.Field;
 
-public interface BasicCSVField extends BasicField {
-
-	public abstract void setHead(String head);
-	public abstract String getHead();
+public abstract class BasicCSVField{
+	//the headline of csv file
+	private String head = null;
+	public void setHead(String head)
+	{
+		this.head = head;
+	}
+	public String getHead()
+	{
+		return head;
+	}
 }
