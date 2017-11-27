@@ -16,7 +16,7 @@ import core.Writer.CSVWriter;
 public class TestDistribution {
 	public static void main(String[] args) {
 		//this is just a test code,plz dont use it in offical environment
-		String filePath = "testDistribution";
+		String filePath = "data/testDistribution";
 
 		Random random = new Random();
 		exponential_Distribution distribution = new exponential_Distribution(random);

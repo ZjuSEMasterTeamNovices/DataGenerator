@@ -18,7 +18,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String filePath = "test";
+		String filePath = "data/test.csv";
 		Random random = new Random();
 		IntegerField int1 = new IntegerField(random,-50,50);
 		int1.setHead("TestHead1");

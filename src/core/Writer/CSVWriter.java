@@ -23,9 +23,15 @@ public class CSVWriter implements BasicWriter {
 	//init the writer,start writing into the file
 	@Override
 	public void initWriter() {
+		//if the path does not have a .csv suffix,lets add it
+		if(outputPath.length() <= 4 || !outputPath.substring(outputPath.length() - 4).equals(".csv"))
+		{
+			outputPath += ".csv";
+		}
+		
 		try {
 			writer = new BufferedWriter(
-					new OutputStreamWriter(new FileOutputStream(new File(outputPath+".csv")), encoding));
+					new OutputStreamWriter(new FileOutputStream(new File(outputPath)), encoding));
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

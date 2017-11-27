@@ -14,7 +14,7 @@ import core.Writer.CSVWriter;
 public class TestDoubleField {
 
 	public static void main(String[] args) {
-		String filePath = "testDouble";
+		String filePath = "data/testDouble";
 		Random random = new Random();
 		DoubleField double1 = new DoubleField(random, 500, 1000);
 		DoubleField double2 = new DoubleField(random, -5.0, 20.0);
