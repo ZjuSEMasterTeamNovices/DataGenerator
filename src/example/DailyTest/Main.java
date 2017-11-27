@@ -4,13 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import javax.naming.BinaryRefAddr;
-
 import core.Distribution.BasicDistribution;
 import core.Distribution.binomial_Distribution;
 import core.Distribution.exponential_Distribution;
 import core.Distribution.poisson_Distribution;
-import core.Field.BasicCSVField;
 import core.Field.BasicField;
 import core.Field.IntegerField;
 import core.Generator.CSVGenerator;
@@ -43,9 +40,9 @@ public class Main {
 //		int ran = (int)dis.genRandom();
 //		System.out.println(ran);
 		//≤¥À…∑÷≤º≤‚ ‘
-		BasicDistribution dis = new poisson_Distribution(2.2);
-		int ran = (int)dis.genRandom();
-		System.out.println(ran);
+//		BasicDistribution dis = new poisson_Distribution(2.2);
+//		int ran = (int)dis.genRandom();
+//		System.out.println(ran);
 	}
 
 }

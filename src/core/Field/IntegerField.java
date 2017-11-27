@@ -6,8 +6,7 @@ public class IntegerField extends BasicCSVField implements BasicField{
 
 	private int min = 1;
 	private int max = -1;
-	private Random device;
-
+	
 	public IntegerField(Random device)
 	{
 		this.device = device;
@@ -25,6 +24,7 @@ public class IntegerField extends BasicCSVField implements BasicField{
 
 	@Override
 	public String getData() {
+		//if user dont specify the min and the max,then we just use the default Random range
 		if(min > max)
 		{
 			return Integer.toString(device.nextInt());
