@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.naming.BinaryRefAddr;
+
+import core.Distribution.BasicDistribution;
+import core.Distribution.binomial_Distribution;
+import core.Distribution.exponential_Distribution;
+import core.Distribution.poisson_Distribution;
 import core.Field.BasicCSVField;
 import core.Field.BasicField;
 import core.Field.IntegerField;
@@ -28,7 +34,18 @@ public class Main {
 		writer.initWriter();
 		CSVGenerator generator = new CSVGenerator(writer, arr, 100);
 		generator.Generate();
-		
+		//指数分布测试
+//		BasicDistribution dis = new exponential_Distribution(0.7);
+//		double ran = (double) dis.genRandom();
+//		System.out.println(ran);
+		//二项分布测试
+//		BasicDistribution dis = new binomial_Distribution(10, 0.5);
+//		int ran = (int)dis.genRandom();
+//		System.out.println(ran);
+		//泊松分布测试
+		BasicDistribution dis = new poisson_Distribution(2.2);
+		int ran = (int)dis.genRandom();
+		System.out.println(ran);
 	}
 
 }
