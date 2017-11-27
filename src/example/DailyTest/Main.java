@@ -1,12 +1,16 @@
 package example.DailyTest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.junit.Test;
+
 import core.Field.BasicCSVField;
 import core.Field.BasicField;
 import core.Field.IntegerField;
+import core.Field.MacField;
 import core.Generator.CSVGenerator;
 import core.Writer.BasicWriter;
 import core.Writer.CSVWriter;
@@ -28,7 +32,14 @@ public class Main {
 		writer.initWriter();
 		CSVGenerator generator = new CSVGenerator(writer, arr, 100);
 		generator.Generate();
-		
+
+	}
+	@Test
+	public void test() throws IOException {
+		MacField randomMac = new MacField();
+		for(int i=0;i<100;i++) {
+			System.out.println(randomMac.randomMac());
+		}
 	}
 
 }
