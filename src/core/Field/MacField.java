@@ -12,6 +12,11 @@ public class MacField extends BasicCSVField implements BasicField{
 	private String SEPARATOR_OF_MAC = ":";
 	private ArrayList<String> originOUI;
 	private BufferedReader br;
+	private Random random;
+
+	public MacField(Random random) {
+		this.random = random;
+	}
 
 	public void init() throws IOException {
 		FileReader fr = new FileReader(new File("data\\oui.txt"));
@@ -23,26 +28,24 @@ public class MacField extends BasicCSVField implements BasicField{
 		}
 	}
 
-	public String randomMac() throws IOException {
-		init();
-		Random random = new Random();
+	@Override
+	public String getData() {
+		try {
+			init();
+		} catch (IOException e) {
+			System.err.println("init fail!");
+		}
+		random = new Random();
 		int num = random.nextInt(originOUI.size());
 
 		String[] randomMac = {
-
-				String.format("%s", originOUI.get(num-1).split("-")[0]),
-				String.format("%s", originOUI.get(num-1).split("-")[1]),
-				String.format("%s", originOUI.get(num-1).split("-")[2]),
+				String.format("%s", originOUI.get(num).split("-")[0]),
+				String.format("%s", originOUI.get(num).split("-")[1]),
+				String.format("%s", originOUI.get(num).split("-")[2]),
 				String.format("%02x", random.nextInt(0xff)),
 				String.format("%02x", random.nextInt(0xff)),
 				String.format("%02x", random.nextInt(0xff))
 		};
 		return String.join(SEPARATOR_OF_MAC, randomMac);
-	}
-
-	@Override
-	public String getData() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

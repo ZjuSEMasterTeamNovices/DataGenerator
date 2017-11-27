@@ -19,7 +19,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String filePath = "D:\\WorkingSpace\\test.csv";
+		String filePath = "data\\test.csv";
 		Random random = new Random();
 		IntegerField int1 = new IntegerField(random,-50,50);
 		int1.setHead("TestHead1");
@@ -34,12 +34,12 @@ public class Main {
 		generator.Generate();
 
 	}
-	@Test
-	public void test() throws IOException {
-		MacField randomMac = new MacField();
-		for(int i=0;i<100;i++) {
-			System.out.println(randomMac.randomMac());
-		}
-	}
+//	@Test
+//	public void test() throws IOException {
+//		MacField randomMac = new MacField();
+//		for(int i=0;i<100;i++) {
+//			System.out.println(randomMac.randomMac());
+//		}
+//	}
 
 }
