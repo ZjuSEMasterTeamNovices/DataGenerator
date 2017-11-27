@@ -16,6 +16,16 @@ public class MacField extends BasicCSVField implements BasicField{
 
 	public MacField(Random random) {
 		this.random = random;
+		try {
+			init();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.err.println("init fail!");
+		}
+	}
+
+	public ArrayList<String> getOriginOUI() {
+		return originOUI;
 	}
 
 	public void init() throws IOException {
@@ -30,21 +40,20 @@ public class MacField extends BasicCSVField implements BasicField{
 
 	@Override
 	public String getData() {
-		try {
-			init();
-		} catch (IOException e) {
-			System.err.println("init fail!");
-		}
-		random = new Random();
+
 		int num = random.nextInt(originOUI.size());
+
+		//System.out.println(num);
+
+		Random r = new Random(num);
 
 		String[] randomMac = {
 				String.format("%s", originOUI.get(num).split("-")[0]),
 				String.format("%s", originOUI.get(num).split("-")[1]),
 				String.format("%s", originOUI.get(num).split("-")[2]),
-				String.format("%02x", random.nextInt(0xff)),
-				String.format("%02x", random.nextInt(0xff)),
-				String.format("%02x", random.nextInt(0xff))
+				String.format("%02x", r.nextInt(0xff)),
+				String.format("%02x", r.nextInt(0xff)),
+				String.format("%02x", r.nextInt(0xff))
 		};
 		return String.join(SEPARATOR_OF_MAC, randomMac);
 	}
