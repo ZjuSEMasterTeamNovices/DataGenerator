@@ -13,8 +13,10 @@ import core.Writer.CSVWriter;
 
 public class MacTest {
 	public static void main(String[] args) {
-		Random random1 = new Random(100);
-		Random random2 = new Random(100);
+		Random r = new Random();
+		int randomNum = r.nextInt();
+		Random random1 = new Random(randomNum);
+		Random random2 = new Random(randomNum);
 		MacField macField = new MacField(random1);
 
 
