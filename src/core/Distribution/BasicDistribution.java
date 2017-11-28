@@ -7,6 +7,7 @@ public abstract class BasicDistribution extends Random{
 	/**
 	 *
 	 */
+	//We still need to rewrite some methods in Random that was invoked in other field
 	private static final long serialVersionUID = 1L;
 
 	protected Random device = null;

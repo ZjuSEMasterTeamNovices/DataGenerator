@@ -6,7 +6,6 @@ import java.util.Random;
 
 import core.Field.BasicField;
 import core.Field.DoubleField;
-import core.Field.IntegerField;
 import core.Generator.CSVGenerator;
 import core.Writer.BasicWriter;
 import core.Writer.CSVWriter;
