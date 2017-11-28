@@ -2,6 +2,7 @@ package core.Field;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,29 +14,45 @@ public class MacField extends BasicCSVField implements BasicField{
 	private ArrayList<String> originOUI;
 	private BufferedReader br;
 	private Random random;
+	//private Integer numOfMAC;
 
 	public MacField(Random random) {
 		this.random = random;
-		try {
-			init();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			System.err.println("init fail!");
-		}
+		init();
 	}
 
 	public ArrayList<String> getOriginOUI() {
 		return originOUI;
 	}
 
-	public void init() throws IOException {
-		FileReader fr = new FileReader(new File("data\\oui.txt"));
+	private void init() {
+		FileReader fr = null;
+		try {
+			fr = new FileReader(new File("data\\oui.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.err.println("File open fail!!");
+		}
 		br = new BufferedReader(fr);
 		originOUI = new ArrayList<>();
 		String line = null;
-		while((line = br.readLine())!=null) {
-			originOUI.add(line);
+		try {
+			while((line = br.readLine())!=null) {
+				originOUI.add(line);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.err.println("readline fail");
 		}
+		try {
+			br.close();
+			fr.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
 	}
 
 	@Override
