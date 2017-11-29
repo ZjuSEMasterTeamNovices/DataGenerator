@@ -36,6 +36,7 @@ public class MacField extends BasicCSVField implements BasicField{
 		while((line = br.readLine())!=null) {
 			originOUI.add(line);
 		}
+		br.close();
 	}
 
 	@Override
