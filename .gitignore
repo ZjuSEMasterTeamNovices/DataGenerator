@@ -14,10 +14,16 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 <<<<<<< HEAD
+<<<<<<< HEAD
 /.metadata/
 =======
+=======
+>>>>>>> 1bd39b1d9385582f0cd298c5da20b757e42259f0
 /bin/
 /.settings/
 *.prefs
 *.csv
+<<<<<<< HEAD
+>>>>>>> 1bd39b1d9385582f0cd298c5da20b757e42259f0
+=======
 >>>>>>> 1bd39b1d9385582f0cd298c5da20b757e42259f0
