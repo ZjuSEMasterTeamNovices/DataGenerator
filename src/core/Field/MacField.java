@@ -51,8 +51,6 @@ public class MacField extends BasicCSVField implements BasicField{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
 	}
 
 	@Override

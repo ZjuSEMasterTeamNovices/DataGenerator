@@ -1,7 +1,6 @@
 package core.Writer;
 
 import java.io.BufferedWriter;
-import java.io.Closeable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,10 +13,6 @@ public class CSVWriter implements BasicWriter {
 	private BufferedWriter writer = null;
 	private String encoding = "utf-8";
 
-	public static final String WINDOWSTAIL = "\n\r";
-	public static final String LINUXTAIL = "\n";
-	public static final String MACOSTAIL = "\r";
-
 	public CSVWriter(String filePath){
 		this.setOutputPath(filePath);
 	}
@@ -28,6 +23,12 @@ public class CSVWriter implements BasicWriter {
 	//init the writer,start writing into the file
 	@Override
 	public void initWriter() {
+		//if the path does not have a .csv suffix,lets add it
+		if(outputPath.length() <= 4 || !outputPath.substring(outputPath.length() - 4).equals(".csv"))
+		{
+			outputPath += ".csv";
+		}
+		
 		try {
 			writer = new BufferedWriter(
 					new OutputStreamWriter(new FileOutputStream(new File(outputPath)), encoding));

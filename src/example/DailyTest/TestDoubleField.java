@@ -3,28 +3,28 @@ package example.DailyTest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 import core.Field.BasicField;
-import core.Field.IntegerField;
+import core.Field.DoubleField;
 import core.Generator.CSVGenerator;
 import core.Writer.BasicWriter;
 import core.Writer.CSVWriter;
 
-public class Main {
+public class TestDoubleField {
 
 	public static void main(String[] args) {
-		System.out.print("Start...");
-		String filePath = "data/test.csv";
+		String filePath = "data/testDouble";
 		Random random = new Random();
-		IntegerField int1 = new IntegerField(random,-50,50);
-		int1.setHead("TestHead1");
-		IntegerField int2 = new IntegerField(random, 100, 500);
-		int2.setHead("TestHead2");
+		DoubleField double1 = new DoubleField(random, 500, 1000);
+		DoubleField double2 = new DoubleField(random, -5.0, 20.0);
 		List<BasicField> arr = new ArrayList<BasicField>();
-		arr.add(int1);
-		arr.add(int2);
+		arr.add(double1);
+		arr.add(double2);
 		BasicWriter writer = new CSVWriter(filePath);
 		writer.initWriter();
 		CSVGenerator generator = new CSVGenerator(writer, arr, 100);
 		generator.Generate();
+		
 	}
+
 }
