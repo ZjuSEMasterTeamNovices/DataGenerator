@@ -25,6 +25,3 @@ this part will mix other parts to generate virtual data.
 Writer:
 this part includes serveral output methods.
 it will support more file format and more efficient output methods. 
-
-At the end,if you want to exercise your ability of programming,or just help us to extend this project for more fields,more data file types,more distributions,plz mail me to 21751095@zju.edu.cn
-# Welcome To Join Us!
