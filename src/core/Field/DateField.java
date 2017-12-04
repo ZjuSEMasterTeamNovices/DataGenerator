@@ -52,6 +52,7 @@ public class DateField extends BasicCSVField implements BasicField{
 
         if(startTime >= end.getTime()){
             System.err.print("startDate shouldn't big than end");
+            System.exit(1);
             return "bye";
         }
 //      long date = getRandomTime(start.getTime(),end.getTime());
