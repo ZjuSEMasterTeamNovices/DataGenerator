@@ -20,6 +20,9 @@ hs_err_pid*
 *.prefs
 *.csv
 *.iml
+<<<<<<< HEAD
 *.iml
 *.csv
 RemoteSystemsTempFiles/.project
+=======
+>>>>>>> e162fb22c7c0245ed121454aaee4b24f8dd76ad2
