@@ -12,7 +12,7 @@ import core.Writer.CSVWriter;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.print("Start...");
+		//System.out.print("Start...");
 		String filePath = "data/test.csv";
 		Random random = new Random();
 		IntegerField int1 = new IntegerField(random,-50,50);

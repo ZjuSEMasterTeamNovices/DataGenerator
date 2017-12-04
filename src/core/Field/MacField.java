@@ -55,7 +55,10 @@ public class MacField extends BasicCSVField implements BasicField{
 
 	@Override
 	public String getData() {
+
 		int num = random.nextInt(originOUI.size());
+
+		//System.out.println(num);
 
 		Random r = new Random(num);
 
