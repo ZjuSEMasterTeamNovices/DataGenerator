@@ -18,7 +18,8 @@ public class viralData {
 		Random AP_Random = new Random();
 		IntegerField AP_ID = new IntegerField(AP_Random, 1, 11);
 		Random DataRandom = new Random();
-		int arr[] = {100,100,100,100,100,100,100,100,15, 10,8, 4,  3, 3,  4, 10, 15, 15,3, 4, 4,5 ,20,100};
+		//the params of Population density of per hour
+		int arr[] = {10000,10000,10000,10000,10000,10000,10000,1000,15, 10,8, 4,  3, 3,  4, 10, 15, 15,3, 4, 4,5 ,200,1000};
 		DateField dateField = new DateField("20171001000000", "20171231235959", DataRandom, arr);
 		AP_ID.setHead("AP_ID");
 		dateField.setHead("Time");
