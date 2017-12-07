@@ -41,9 +41,16 @@ public class DateField extends BasicCSVField implements BasicField{
         if(randomTime == begin || randomTime == end){
             return getRandomTime(begin,end);
         }*/
+    	startTime = begin;
     	int Hour = new Date(startTime).getHours();
 //    	System.out.println(Hour);
-    	startTime = begin + random.nextInt(arr[Hour])*1000;
+    	while(arr[Hour] < 0) {
+    		//the time of Hour add
+    		startTime = startTime + 3600000;
+    		Hour = new Date(startTime).getHours();
+//    		System.out.println(Hour);
+    	}
+    	startTime = startTime + random.nextInt(arr[Hour])*1000;
         return startTime;
     }
 
