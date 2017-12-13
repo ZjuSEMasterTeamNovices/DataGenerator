@@ -21,9 +21,9 @@ public class MacField extends BasicCSVField implements BasicField{
 		init();
 	}
 
-	public ArrayList<String> getOriginOUI() {
-		return originOUI;
-	}
+//	public ArrayList<String> getOriginOUI() {
+//		return originOUI;
+//	}
 
 	private void init() {
 		FileReader fr = null;
@@ -32,6 +32,7 @@ public class MacField extends BasicCSVField implements BasicField{
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.err.println("File open fail!!");
+			e.printStackTrace();
 		}
 		br = new BufferedReader(fr);
 		originOUI = new ArrayList<>();
@@ -60,6 +61,7 @@ public class MacField extends BasicCSVField implements BasicField{
 
 		//System.out.println(num);
 
+		//use a temporary random device to generate inner fields 
 		Random r = new Random(num);
 
 		String[] randomMac = {

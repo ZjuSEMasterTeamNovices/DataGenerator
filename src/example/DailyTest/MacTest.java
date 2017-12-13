@@ -20,13 +20,13 @@ public class MacTest {
 		MacField macField = new MacField(random1);
 
 
-		IntegerField int1 = new IntegerField(random2,0,macField.getOriginOUI().size());
+		//IntegerField int1 = new IntegerField(random2,0,macField.getOriginOUI().size());
 		BasicWriter writer = new CSVWriter("data//MacTest.csv");
 		List<BasicField> arr = new ArrayList<BasicField>();
 		writer.initWriter();
-		int1.setHead("	ID	");
+		//int1.setHead("	ID	");
 		macField.setHead("	MAC	");
-		arr.add(int1);
+		//arr.add(int1);
 		arr.add(macField);
 		CSVGenerator generator = new CSVGenerator(writer, arr, 1000);
 		generator.Generate();

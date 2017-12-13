@@ -60,7 +60,12 @@ public class CSVGenerator implements BasicGenerator {
 	//check the data of field if is valid or not
 	private boolean checkData(BasicField item)
 	{
-		for(char tmpChar : item.getData().toCharArray())
+		String tmpData = item.getData();
+		if(tmpData == null)
+		{
+			return false;
+		}
+		for(char tmpChar : tmpData.toCharArray())
 		{
 			if(!isLegal(tmpChar))
 			{
